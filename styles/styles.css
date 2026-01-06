@@ -542,3 +542,22 @@ footer {
   font-family: var(--font-heading);
   letter-spacing: 2px;
 }
+
+footer p {
+    position: relative;
+}
+
+footer p::after {
+    content: " · Copyright :) Make it so cool! By Pavle Pritula";
+    opacity: 0;
+    visibility: hidden;
+    margin-left: 8px;
+    color: #7df9ff;
+    font-size: 0.9em;
+    transition: opacity 0.3s ease;
+}
+
+footer:hover p::after {
+    opacity: 1;
+    visibility: visible;
+}
