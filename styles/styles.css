@@ -543,20 +543,26 @@ footer {
 }
 
 footer p {
-    position: relative;
+  position: relative;
+  display: inline-block;
 }
 
 footer p::after {
-    content: " · Copyright :) Make it so cool! By Pavle Pritula";
+    content: " · Copyright :) Make it so cool! By Pavle Pritula ·";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%) translateY(10px);
+    white-space: nowrap;
     opacity: 0;
-    visibility: hidden;
-    margin-left: 8px;
+    pointer-events: none;
     color: #7df9ff;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 footer:hover p::after {
     opacity: 1;
-    visibility: visible;
+    transform: translateX(-50%) translateY(0);
 }
