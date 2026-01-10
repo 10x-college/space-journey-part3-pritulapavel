@@ -531,7 +531,6 @@ h1.glow-text {
   text-shadow: 0 0 8px var(--neon-purple);
 }
 
-/* --- FOOTER --- */
 footer {
   text-align: center;
   padding: 60px 20px;
@@ -541,4 +540,29 @@ footer {
   border-top: 1px solid #111;
   font-family: var(--font-heading);
   letter-spacing: 2px;
+}
+
+footer p {
+  position: relative;
+  display: inline-block;
+}
+
+footer p::after {
+    content: " · Copyright :) Make it so cool! By Pavle Pritula ·";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%) translateY(10px);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    color: #7df9ff;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+footer:hover p::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
